@@ -1,0 +1,22 @@
+# Generated training and local environments
+*.pt
+*.pkl
+*.pyc
+*.pyo
+*.so
+*.o
+*.a
+**/__pycache__/
+**/build/
+**/dist/
+**/.pytest_cache/
+**/.venv/
+.env
+.env.*
+/tgppo/solver/
+/tgppo/downloads/
+/tgppo/setup/scip-6.0.1/
+/tgppo/setup/soplex-4.0.1/
+/docs/stage1/sources/
+/migration/2026-10-22/*.tar.gz*
+/tgppo/runs/server6-20261022/
