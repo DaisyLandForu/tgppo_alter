@@ -17,7 +17,7 @@
 - 本轮研究代码：tgppo/experiments/server-20261022。六作业配置和启动脚本：migration/2026-10-22/server-run；先读该目录 README.md。
 - 上游原版：tgppo/repo。历史 stage2 至 stage5 版本均保留。stage4 定制绑定源码位于 tgppo/experiments/stage4/metrics_binding；其 src 需在 PYTHONPATH 中先于本轮 code。必须有 getCandsState、getMIPState、getNodeState、getIntegralSnapshot、getOpenNodeSnapshot 五个接口；普通 PyPI PySCIPOpt 1.4.9 不满足需求。
 - 归一化所需的训练侧统计 tgppo/runs/stage4-calibration/final_train_only_statistics.json 已纳入交接，μ=-13.166822661165169，σ=8.840326545776836。value 和 GAE 保持原单位，仅 Critic 损失内部标准化。
-- cutoffs.json、download_manifest.json 和全部 25 个训练/开发、66 个测试 .mps.gz 实例均包含在直传压缩包中；解压后核对文件 SHA。若后续只从公开 GitHub 仓库克隆，需要按其独立清单确认数据是否齐全。
+- cutoffs.json、download_manifest.json 和全部 25 个训练/开发、66 个测试 .mps.gz 实例同时包含在直传压缩包与公开 GitHub 快照中；解压或克隆后按各自清单核对文件 SHA。
 - 旧模型 .pt、轨迹 .pkl 和编译二进制未打包。直传包包含 SCIP 6.0.1、SoPlex 4.0.1 源码（排除旧 build/.git）；固定上游 commit 在 tgppo/setup/source_versions.json，可在服务器从包内源码重建到 tgppo/solver。不要把源机 .so 直接视为适合新 ABI。
 - 环境描述在 migration/2026-10-22/environment。直传包文件与排除清单见 ARCHIVE_CONTENT_MANIFEST.json。新机器需自建 Python 3.8 + Torch/CUDA + 定制 PySCIPOpt + 求解器；源机未构建可直接使用的容器镜像。
 

@@ -2,7 +2,7 @@
 
 ## 2026-10-22 最新直传包（优先阅读）
 
-用户改为先直接上传压缩包到学校服务器，GitHub 同步待仓库写入授权完成后另做。最新包是本目录 `tgppo_research_handoff_2026-10-22.tar.gz`，校验文件为同名 `.sha256`，逐文件清单在 `ARCHIVE_CONTENT_MANIFEST.json`；包内根目录为 `research/`。它包含六作业新代码与脚本、全部 25 个训练/开发及 66 个测试 `.mps.gz` 实例、cutoff、文档和 SCIP/SoPlex 源码，因而**不需要再单独传 MPS 数据才能训练**。旧 `.pt`/`.pkl`、编译二进制、Git 内部元数据和 Conda 环境不包含。
+用户先采用直传压缩包迁移，随后已把可公开迁移的源码、文档和全部 91 个 MPS 实例同步到 `DaisyLandForu/tgppo_alter` 的 `main`；Git 文件清单见 `GITHUB_TRANSFER_MANIFEST.json`。最新直传包是本目录 `tgppo_research_handoff_2026-10-22.tar.gz`，校验文件为同名 `.sha256`，逐文件清单在 `ARCHIVE_CONTENT_MANIFEST.json`；包内根目录为 `research/`。直传包比 Git 快照多包含 SCIP/SoPlex 源码和阶段 1 论文 PDF，二者都包含六作业新代码与脚本、全部 25 个训练/开发及 66 个测试 `.mps.gz` 实例、cutoff 和文档。旧 `.pt`/`.pkl`、编译二进制、Git 内部元数据和 Conda 环境不包含。
 
 服务器上先用 `sha256sum -c tgppo_research_handoff_2026-10-22.tar.gz.sha256` 验证压缩包，再解压到选定目录：`tar -xzf tgppo_research_handoff_2026-10-22.tar.gz -C /目标父目录`。进入解压出的 `research/`，执行 `python migration/2026-10-22/verify_server_archive.py` 核对逐文件 SHA，再阅读 `HANDOFF_SERVER_2026-10-22.md`，把 `PROMPT_服务器Codex.md` 中的整段任务交给服务器 Codex。包内源码不等于已编译/已运行环境；正式作业前必须重建绑定、测原生基线和通过目标 V100 桥接。
 

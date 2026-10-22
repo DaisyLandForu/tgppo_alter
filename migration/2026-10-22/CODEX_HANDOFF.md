@@ -89,6 +89,6 @@ Actor lr=.00024，Critic lr=.00012，clip=.16，entropy=.003，gamma=.97，lambd
 
 ## 2026-10-22 直传压缩包更新
 
-用户决定先用压缩包迁移，GitHub 上传留待写入授权之后。最新直传包与逐文件 SHA 清单位于本目录，具体使用方法见 `README_迁移清单与顺序.md` 和 `HANDOFF_SERVER_2026-10-22.md`。用户特别确认 MPS 实例属于训练/评估数据，因此**最新包包含 25 个训练/开发和 66 个测试 `.mps.gz` 实例**；此前关于“数据需要另行手传”的说法对最新包已失效。包内也包含 SCIP/SoPlex 源码，但没有编译产物、旧模型、轨迹、Conda 环境或 Codex 登录状态。
+用户决定先用压缩包迁移，随后已把可公开迁移的源码、文档和全部 91 个 MPS 实例推到 `DaisyLandForu/tgppo_alter` 的 `main`。最新直传包与逐文件 SHA 清单位于本目录，具体使用方法见 `README_迁移清单与顺序.md` 和 `HANDOFF_SERVER_2026-10-22.md`；Git 文件清单另见 `GITHUB_TRANSFER_MANIFEST.json`。用户特别确认 MPS 实例属于训练/评估数据，因此**直传包与 Git 快照均包含 25 个训练/开发和 66 个测试 `.mps.gz` 实例**；此前关于“数据需要另行手传”的说法已失效。直传包还包含 SCIP/SoPlex 源码；Git 快照需按固定版本另取这两份源码。两者都没有编译产物、旧模型、轨迹、Conda 环境或 Codex 登录状态。
 
 服务器 Codex 的可复制任务位于 `PROMPT_服务器Codex.md`。本地打包和校验不能替代目标机器的 Python/SCIP/定制绑定、V100/Slurm 检查；上述六作业范围已由用户明确授权，前置验证通过后可直接按冻结协议启动。
